@@ -1,9 +1,13 @@
-import bg1 from "../images/bg1.jpg";
+
+import { Page } from "./form";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-0 bg-norsu w-full">
-      <h1>NAUSOB NANI</h1>
+    <main className="flex min-h-screen flex-col items-center text-center justify-center p-0 bg-dark  w-full">
+      <div className="shadow-xl p-4">
+       
+       <Page />
+      </div>
     </main>
   );
 }
