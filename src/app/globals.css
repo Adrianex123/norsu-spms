@@ -17,13 +17,11 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  width: 100%;
+  height: 100%;
+ background-color: blue;
+  
+  
 }
 
 @layer utilities {
@@ -32,116 +30,242 @@ body {
   }
 }
 
-.bg-norsu {
-  background-image: '../images/bg1.jpg';
-}
 
-.form {
+
+.form_main {
+
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 0.4em;
-  background-color: #171717;
-  border-radius: 25px;
-  transition: .4s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+
+  width: 680px ;
+  height: 100vh;
+ 
+  
 }
 
-.form:hover {
-  transform: scale(1.05);
-  border: 1px solid black;
+.heading {
+  font-size: 2.5em;
+  color: #2e2e2e;
+  font-weight: 700;
+  margin: 15px 0 30px 0;
 }
 
-#heading {
-  text-align: center;
-  margin: 2em;
-  color: rgb(255, 255, 255);
-  font-size: 1.2em;
-}
-
-.field {
+.inputContainer {
+  width: 50%;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5em;
-  border-radius: 25px;
-  padding: 0.6em;
-  border: none;
-  outline: none;
-  color: white;
-  background-color: #171717;
-  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
 
-.input-icon {
-  height: 1.3em;
-  width: 1.3em;
-  fill: white;
+.inputIcon {
+  position: absolute;
+  left: 10px;
 }
 
-.input-field {
-  background: none;
-  border: none;
-  outline: none;
+.inputField {
   width: 100%;
-  color: #d3d3d3;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(173, 173, 173);
+  border-radius: 30px;
+  margin: 10px 0;
+  color: black;
+  font-size: .8em;
+  font-weight: 500;
+  box-sizing: border-box;
+  padding-left: 30px;
 }
 
-.form .btn {
+.inputField:focus {
+  outline: none;
+  border-bottom: 2px solid rgb(199, 114, 255);
+}
+
+.inputField::placeholder {
+  color: rgb(80, 80, 80);
+  font-size: 1em;
+  font-weight: 500;
+}
+
+#button {
+  position: relative;
+  width: 50%;
+  border: 2px solid #8000ff;
+  background-color: blue;
+  height: 40px;
+  color: white;
+  font-size: .8em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  margin: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#button::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.253);
+  height: 100%;
+  width: 150px;
+  top: 0;
+  left: -200px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 100px;
+  filter: blur(10px);
+  transition-duration: .5s;
+}
+
+#button:hover::after {
+  transform: translateX(600px);
+  transition-duration: .5s;
+}
+
+.signupContainer {
+  margin: 0;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  flex-direction: row;
-  margin-top: 2.5em;
+  gap: 20px;
 }
 
-.button1 {
-  padding: 0.5em;
-  padding-left: 1.1em;
-  padding-right: 1.1em;
-  border-radius: 5px;
-  margin-right: 0.5em;
-  border: none;
-  outline: none;
-  transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
+.signupContainer p {
+  font-size: .9em;
+  font-weight: 500;
+  color: black;
 }
 
-.button1:hover {
-  background-color: black;
+.signupContainer a {
+  font-size: .7em;
+  font-weight: 500;
+  background-color: #2e2e2e;
   color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 20px;
 }
 
-.button2 {
-  padding: 0.5em;
-  padding-left: 2.3em;
-  padding-right: 2.3em;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
+.nrlog
+{
+  background-image: url('../images/norsu.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: reverse 10s linear infinite;
+  height: 250px;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.loader {
+  font-family: Roboto, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
 }
 
-.button2:hover {
-  background-color: black;
-  color: white;
+.ani:nth-child(1) {
+  animation: ani1 2.1s ease-in-out 14s infinite;
 }
 
-.button3 {
-  margin-bottom: 3em;
-  padding: 0.5em;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
+@keyframes ani1 {
+  50% {
+    font-size: 40px;
+  }
 }
 
-.button3:hover {
-  background-color: red;
-  color: white;
+.ani:nth-child(2) {
+  animation: ani2 2.1s ease-in-out 12s infinite;
+}
+
+@keyframes ani2 {
+  50% {
+    font-size: 40px;
+  }
+}
+
+.ani:nth-child(3) {
+  animation: ani3 2.1s ease-in-out 10s infinite;
+}
+
+@keyframes ani3 {
+  50% {
+    font-size: 40px;
+  }
+}
+
+.ani:nth-child(4) {
+  animation: ani4 2.1s ease-in-out 8s infinite;
+}
+
+@keyframes ani4 {
+  50% {
+    font-size: 40px;
+  }
+}
+
+.ani:nth-child(5) {
+  animation: ani5 2.1s ease-in-out 6s infinite;
+}
+
+@keyframes ani5 {
+  50% {
+    font-size: 40px;
+  }
+}
+
+.ani:nth-child(6) {
+  animation: ani6 2.1s ease-in-out 4s infinite;
+}
+
+@keyframes ani6 {
+  50% {
+    font-size: 40px;
+  }
+}
+
+.ani:nth-child(7) {
+  animation: ani7 2.1s ease-in-out 2s infinite;
+}
+
+@keyframes ani7 {
+  50% {
+    font-size: 40px;
+  }
+}
+
+
+.container {
+  display: flex;
+  width:100%;
+  height: 100vh;
+}
+
+.div1
+{
+  width: 100%;
+  height: 100vh;
+  float: left;
+  background-image: url('../images/6.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+ 
+}
+.div2
+{
+ 
+    float: left;
+  
 }
