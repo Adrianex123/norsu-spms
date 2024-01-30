@@ -4,7 +4,8 @@ import loginIllustration from "../images/login-illustration.png";
 
 export default function Home() {
   return (
-    <main className="w-screen h-screen flex">
+    <form action="./Staff" method="post">
+      <main className="w-screen h-screen flex">
       <div className="w-[85%] h-full bg-[url('../images/bg-left.png')] bg-cover bg-no-repeat flex flex-col justify-center place-items-center gap-14">
         <Image src={loginLogo} alt="norsu-logo" />
         <Image src={loginIllustration} alt="login-illustration" />
@@ -58,5 +59,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </form>
   );
 }
