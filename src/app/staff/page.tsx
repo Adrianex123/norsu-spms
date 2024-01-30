@@ -4,11 +4,11 @@ export default function Sidebar() {
     <main className="w-screen h-screen flex">
     
       
-    <div className="w-[20%] h-full sidebar  flex flex-col  place-items-center gap-14">
+    <div className="w-[30%] h-full sidebar  flex flex-col  place-items-center gap-14">
       
-      <div className="logo p-20 "   >
-          
-      </div>
+        <div className="logo p-20 "   >
+            
+        </div>
 
       <div className="flex flex-col justify-items-center place-items-left gap-2">
      
