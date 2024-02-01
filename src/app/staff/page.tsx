@@ -7,7 +7,7 @@ export default function Sidebar() {
     <div className="w-[30%] h-full sidebar  flex flex-col  place-items-center gap-14">
       
         <div className="logo p-20 "   >
-            acscacac
+            prettier
         </div>
 
       <div className="flex flex-col justify-items-center place-items-left gap-2">
