@@ -1,7 +1,7 @@
-export default function Home() {
+export default function Queue() {
   return (
     <div className="w-full h-full flex flex-col justify-center place-items-center">
-      Content
+      welcome to queue.
     </div>
   );
 }
