@@ -1,7 +1,7 @@
-export default function Staff() {
+export default function Reports() {
   return (
     <div className="w-full h-full flex flex-col justify-center place-items-center">
-      Welcome to Staff
+      welcome to reports.
     </div>
   );
 }
