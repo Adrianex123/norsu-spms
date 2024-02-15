@@ -1,6 +1,7 @@
 import Image from "next/image";
 import loginLogo from "../images/login-logo.png";
 import loginIllustration from "../images/login-illustration.png";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -12,27 +13,27 @@ export default function Page() {
               href="#"
               className=" nav   text-base font-extrabold  py-4 px-4 rounded-lg"
             >
-              TEXT HERE
+              Home
             </a>
             <a
               href="#"
               className=" nav   text-base font-extrabold py-4 px-4 rounded-lg"
             >
-              TEXT HERE
+              About
             </a>
             <a
               href="#"
               className=" nav   text-base font-extrabold py-4 px-4 rounded-lg pr-10 "
             >
-              TEXT HERE
+              Profile
             </a>
-            <button className="">
-              <a
-                href="#"
-                className="  py-23 text-3xl text-base font-extrabold py-5 px-5  "
+            <button>
+              <Link
+                href="/login"
+                className="    text-base font-extrabold mr-[-5px] ml-[-5px]  "
               >
                 LOGIN
-              </a>
+              </Link>
             </button>
           </nav>
 

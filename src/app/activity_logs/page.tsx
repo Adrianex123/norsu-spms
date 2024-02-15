@@ -1,8 +1,13 @@
 export default function Activity_logs() {
   return (
-    <div className="w-full h-full flex flex-col justify-center place-items-center">
-      <div className="w-[98%] h-[97%]  bg-[#17134e]  h-screen flex flex-col justify-center place-items-center">
-        welcome to Activity logs.
+    <div className="w-full h-full pt-3 flex flex-col place-items-center">
+      <div className="w-[97%] h-16    text-2xl font-extrabold  flex flex-col ">
+        <div className=" bg-gray-500 w-50%">
+          <p className="py-2 px-2 rounded-[50px]">Welcome to Activity Logs.</p>
+        </div>
+      </div>
+      <div className="h-[90%] py- px-2 bg-gray-500 w-[97%]">
+        <p className=" py-2 px-2"></p>
       </div>
     </div>
   );
