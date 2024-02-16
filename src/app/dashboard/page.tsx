@@ -1,9 +1,8 @@
-import reqlogo from "../images/request.png";
 export default function Dashboard() {
   return (
     <div className="w-full h-full pt-4 bg-gray-300   flex flex-col place-items-center">
       <div className="w-[97%] h-16    text-2xl font-extrabold   flex-col ">
-        <div className=" bg-gray-500 w-50%">
+        <div>
           <p className="py-2 px-2 rounded-[50px]">Welcome to Dashboard.</p>
         </div>
       </div>
@@ -11,28 +10,38 @@ export default function Dashboard() {
       <div className="h-[20%] py-4 px-2 w-[97%]">
         <div className="grid grid-cols-3 gap-4 ">
           <div className="bg-[#FFFFFF] rounded-[15px] h-[181px] p-4">
-            <img
-              width="50"
-              height="50"
-              src="https://img.icons8.com/pastel-glyph/64/40C057/email-marketing--v1.png"
-              alt="email-marketing--v1"
-            />
-            <p className="py-4 font-extrabold text-4xl"> 45</p>
+            <div className="w-12 h-12  bg-[url('../images/req.png')] bg-cover bg-no-repeat"></div>
+            <p className="py-2 font-extrabold text-4xl"> 45</p>
             <p className=""> Total Request</p>
           </div>
+
           <div className="bg-[#FFFFFF] rounded-[15px] h-[181px] p-4">
-            Column 1
+            <div className="w-14 h-14 s bg-[url('../images/approve.png')] bg-cover bg-no-repeat"></div>
+            <p className="py-2 font-extrabold text-4xl"> 45</p>
+            Total Approved this Month.
           </div>
           <div className="bg-[#FFFFFF] rounded-[15px] h-[181px] p-4">
-            Column 1
+            <div className="w-14 h-14 s bg-[url('../images/rejected.png')] bg-cover bg-no-repeat"></div>
+            <p className="py-2 font-extrabold text-4xl"> 45</p>
+            Decline
           </div>
         </div>
       </div>
 
       <div className=" mt-14 display-flex py-4 px-2 w-[97%]">
         <div className="grid grid-cols-3 gap-4 ">
-          <div className=" col-span-2 bg-[#FFFFFF] font-semibold rounded-[15px] h-[440px] p-4">
-            Stocks
+          <div className=" col-span-2 bg-[#FFFFFF] rounded-[15px] h-[440px] p-4">
+            <p className="py-2  text-1xl">Stocks</p>
+            <table>
+              <tr className="  text-center">
+                <th className="px-7">Item ID</th>
+                <th className="px-7">Name of Item</th>
+                <th className="px-7">Unit of Measure</th>
+                <th className="px-7">Last Updated</th>
+                <th className="px-7">Action</th>
+              </tr>
+            </table>
+            <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-500" />
           </div>
           <div className="bg-[#FFFFFF] rounded-[15px] font-semibold p-4">
             Activity Logs
