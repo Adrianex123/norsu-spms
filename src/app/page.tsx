@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <form action="/home" method="">
+    <form action="/login" method="">
       <main className="w-screen h-screen w-100%] h-full bg-[url('../images/bg-left.png')] bg-cover bg-no-repeat flex  justify-center place-items-center gap-14">
         <div className="container mx-auto h-full">
           <nav className="text-right  py-5">
