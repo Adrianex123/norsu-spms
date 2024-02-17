@@ -27,7 +27,7 @@ export default function Page() {
             >
               Profile
             </a>
-            <button>
+            <button className="button">
               <Link
                 href="/login"
                 className="    text-base font-extrabold mr-[-5px] ml-[-5px]  "

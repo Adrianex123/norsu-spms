@@ -31,8 +31,8 @@ export default function Dashboard() {
       <div className=" mt-14 display-flex py-4 px-2 w-[97%]">
         <div className="grid grid-cols-3 gap-4 ">
           <div className=" col-span-2 bg-[#FFFFFF] rounded-[15px] h-[440px] p-4">
-            <p className="py-2  text-1xl">Stocks</p>
-            <table>
+            <a className="py-2  text-1xl">Stocks</a>
+            <table className="grid">
               <tr className="  text-center">
                 <th className="px-7">Item ID</th>
                 <th className="px-7">Name of Item</th>
@@ -41,7 +41,7 @@ export default function Dashboard() {
                 <th className="px-7">Action</th>
               </tr>
             </table>
-            <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-500" />
+            <hr className="h-px my-2 border-0 dark:bg-gray-700" />
           </div>
           <div className="bg-[#FFFFFF] rounded-[15px] font-semibold p-4">
             Activity Logs
