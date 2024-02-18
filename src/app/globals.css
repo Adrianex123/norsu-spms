@@ -116,3 +116,19 @@ button1:hover {
   border-radius: 43px;
   background-color: midnightblue;
 }
+
+.tableContainer {
+  overflow-x: auto; /* Enable horizontal scrolling for small screens */
+}
+
+.flexibleTable {
+  width: 100%; /* Occupy the full width of the container */
+  border-collapse: collapse; /* Collapse borders between table cells */
+}
+
+.flexibleTable th,
+.flexibleTable td {
+  padding: 8px; /* Add padding to table cells */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #ddd; /* Add bottom border to table cells */
+}
