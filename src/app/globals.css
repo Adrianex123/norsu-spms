@@ -40,8 +40,9 @@
 
 .nav:hover {
   color: #e1f0da;
+  background-color: transparent;
 }
-button {
+button1 {
   border: unset;
   border-radius: 30px;
   color: #212121;
@@ -70,18 +71,18 @@ button::before {
   transition: all 250ms;
 }
 
-button:hover {
+button1:hover {
   color: #e8e8e8;
 }
 
-button:hover::before {
+button1:hover::before {
   width: 100%;
 }
 
-button {
+button1 {
   border: none;
   color: #fff;
-  background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
+  background-image: linear-gradient(30deg, blue #4ce3f7);
   border-radius: 20px;
   background-size: 100% auto;
   font-family: inherit;
@@ -89,7 +90,7 @@ button {
   padding: 0.6em 1.5em;
 }
 
-button:hover {
+button1:hover {
   background-position: right center;
   background-size: 200% auto;
   -webkit-animation: pulse 2s infinite;
@@ -109,34 +110,25 @@ button:hover {
     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
   }
 }
-buttonlogout {
-  border: none;
-  color: #fff;
-  background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
-  border-radius: 20px;
-  background-size: 20% auto;
-  font-family: inherit;
-  font-size: 17px;
-  padding: 0.6em 1.5em;
+
+.search {
+  color: white;
+  border-radius: 43px;
+  background-color: midnightblue;
 }
 
-buttonlogout:hover {
-  background-position: right center;
-  background-size: 20% auto;
-  -webkit-animation: pulse 2s infinite;
-  animation: pulse512 1.5s infinite;
+.tableContainer {
+  overflow-x: auto; /* Enable horizontal scrolling for small screens */
 }
 
-@keyframes pulse512 {
-  0% {
-    box-shadow: 0 0 0 0 #05bada66;
-  }
+.flexibleTable {
+  width: 100%; /* Occupy the full width of the container */
+  border-collapse: collapse; /* Collapse borders between table cells */
+}
 
-  70% {
-    box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
-  }
+.flexibleTable th,
+.flexibleTable td {
+  padding: 8px; /* Add padding to table cells */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #ddd; /* Add bottom border to table cells */
 }
