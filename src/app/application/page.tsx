@@ -1,7 +1,7 @@
 export default function Dashboard() {
   return (
     <div className="w-full h-full pt-4 bg-gray-300   flex-direction-row flex flex-col place-items-center">
-      <div className="w-[97%] h-16    text-2xl font-extrabold   flex-col ">
+      <div className="w-[97%] h-16 text-2xl font-extrabold   flex-col ">
         <div>
           <p className="py-2 px-2 rounded-[50px]">Welcome to Dashboard.</p>
         </div>
