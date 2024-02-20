@@ -42,21 +42,22 @@
   color: #e1f0da;
   background-color: transparent;
 }
-button1 {
+.button1 {
   border: unset;
   border-radius: 30px;
   color: #212121;
   z-index: 1;
-  background: #e8e8e8;
+  background-color: transparent;
   position: relative;
   font-weight: 1000;
   -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
   box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
   transition: all 250ms;
   overflow: hidden;
+  color: black;
 }
 
-button::before {
+.button1::before {
   content: "";
   position: absolute;
   top: 0;
@@ -71,15 +72,15 @@ button::before {
   transition: all 250ms;
 }
 
-button1:hover {
+.button1:hover {
   color: #e8e8e8;
 }
 
-button1:hover::before {
+.button1:hover::before {
   width: 100%;
 }
 
-button1 {
+.button1 {
   border: none;
   color: #fff;
   background-image: linear-gradient(30deg, blue #4ce3f7);
@@ -90,7 +91,7 @@ button1 {
   padding: 0.6em 1.5em;
 }
 
-button1:hover {
+.button1:hover {
   background-position: right center;
   background-size: 200% auto;
   -webkit-animation: pulse 2s infinite;
@@ -131,4 +132,15 @@ button1:hover {
   padding: 8px; /* Add padding to table cells */
   text-align: left; /* Align text to the left */
   border-bottom: 1px solid #ddd; /* Add bottom border to table cells */
+}
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  align-items: center;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }

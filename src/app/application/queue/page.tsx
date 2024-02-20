@@ -13,7 +13,7 @@ export default function Queue() {
           <p className="py-2 px-2 rounded-[50px]">Welcome to Queue.</p>
         </div>
       </div>
-      <div className="h-[90%] py- px-2 bg-gray-500 w-[97%]">
+      <div className="h-full py-2 px-2 bg-gray-500 w-[97%]">
         <p className=" py-2 px-2"></p>
       </div>
     </div>
