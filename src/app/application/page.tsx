@@ -3,27 +3,55 @@ export default function Dashboard() {
     <div className="max-w-full  max-h-full w-full h-full pt-4 bg-gray-300   flex flex-col place-items-center">
       <div className="w-[97%] h-16 text-2xl font-extrabold   flex-col ">
         <div>
-          <p className="py-2 px-2 rounded-[50px]">Welcome to Dashboard.</p>
+          <p className="py-2 px-2 "> Dashboard</p>
         </div>
       </div>
 
-      <div className="h-[20%] py-2  px-2 w-[97%] ">
-        <div className="grid grid-cols-3 gap-4 ">
-          <div className="bg-[#FFFFFF] rounded-[15px] h-[181px] p-4">
-            <div className="w-12 h-12  bg-[url('../images/req.png')] bg-cover bg-no-repeat"></div>
-            <p className="py-2 font-extrabold text-3xl"> 45</p>
-            <p className=" text-blue-900 font-semibold"> Total Request</p>
-          </div>
+      <div className="h-full w-full ">
+        <div className="flex items-center justify-center">
+          <div className="grid grid-cols-1  py-4  px-4  gap-6 sm:grid-cols-1   md:grid-cols-2      lg:grid-cols-2 xl:grid-cols-3">
+            <div className="relative bg-white py-4  px-4 rounded-3xl h-[181px] w-[350px]  shadow-xl">
+              <div className="w-14 h-14  bg-[url('../images/req.png')] bg-cover bg-no-repeat"></div>
+              <div className="mt-4">
+                <p className="text-xl font-semibold my-2">45</p>
 
-          <div className="bg-[#FFFFFF] rounded-[15px] h-[181px] p-4">
-            <div className="w-14 h-14 s bg-[url('../images/approve.png')] bg-cover bg-no-repeat"></div>
-            <p className="py-2 font-extrabold text-3xl"> 45</p>
-            <p className=" text-blue-900 font-semibold"> Total Approved</p>
-          </div>
-          <div className="bg-[#FFFFFF] rounded-[15px] h-[181px] p-4">
-            <div className="w-14 h-14 s bg-[url('../images/rejected.png')] bg-cover bg-no-repeat"></div>
-            <p className="py-2 font-extrabold text-3xl"> 45</p>
-            <p className=" text-blue-900 font-semibold"> Total Deckined</p>
+                <div className="flex justify-between">
+                  <div className="my-2">
+                    <p className="font-semibold text-base mb-2">
+                      Total Progress this month.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative bg-white py-4  px-4 rounded-3xl h-[181px] w-[350px]  shadow-xl">
+              <div className="w-14 h-14  bg-[url('../images/approve.png')] bg-cover bg-no-repeat"></div>
+              <div className="mt-4">
+                <p className="text-xl font-semibold my-2">45</p>
+
+                <div className="flex justify-between">
+                  <div className="my-2">
+                    <p className="font-semibold text-base mb-2">
+                      Total Approved this month.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative bg-white py-4  px-4 rounded-3xl h-[181px] w-[350px]  shadow-xl">
+              <div className="w-14 h-14  bg-[url('../images/rejected.png')] bg-cover bg-no-repeat"></div>
+              <div className="mt-4">
+                <p className="text-xl font-semibold my-2">45</p>
+
+                <div className="flex justify-between">
+                  <div className="my-2">
+                    <p className="font-semibold text-base mb-2">
+                      Total Declined this month.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

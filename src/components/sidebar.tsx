@@ -5,10 +5,10 @@ import OtenNiSharleen from "../images/login-logo.png";
 
 export default function Sidebar() {
   return (
-    <div className=" md:w-[14%] lg:w-[18%]  sidebar h-full flex flex-col place-items-center bg-[#17134e] py-10 px-8 gap-12">
+    <div className=" sm:[w-1%] md:w-[17%]  lg:w-[16%]  sidebar h-full flex flex-col place-items-center bg-[#17134e] py-10 px-8 gap-12">
       <Image src={OtenNiSharleen} className="w-full" alt="Picture of Logo" />
 
-      <div className="flex flex-col links w-full gap-2 ">
+      <div className="flex   flex-col links w-full gap-2 ">
         <Link
           href="/application"
           className="box text-white text-base font-extrabold py-4 px-2 rounded-lg"
