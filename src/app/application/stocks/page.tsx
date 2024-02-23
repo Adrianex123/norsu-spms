@@ -128,8 +128,8 @@ export default function Stocks() {
                         </ul>
                       </div>
                     </div>
-                    <div className="">
-                      <div className=" inline-block relative">
+                    <div className="left-32">
+                      <div className=" ">
                         <button className="bg-gray-300 text-gray-700 font-normal py-2 px-4 rounded inline-flex items-center">
                           <span className="mr-1">Add</span>
                         </button>

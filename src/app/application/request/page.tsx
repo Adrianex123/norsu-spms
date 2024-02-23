@@ -21,7 +21,7 @@ export default function Request() {
               <div>
                 <div className="flex w-full pt-4 gap-2 shrink-0 md:w-max">
                   <div className="w-full md:w-72">
-                    <div className="relative   h-10 w-full min-w-[200px]">
+                    <div className="relative   h-10  min-w-[60px]">
                       <div className="absolute grid  w-5 h-5 top-2/4 right-3 -translate-y-2/4 place-items-center text-blue-gray-500">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -49,10 +49,10 @@ export default function Request() {
                     </div>
                   </div>
 
-                  <div className="py">
-                    <div className="dropdown inline-block relative">
-                      <button className="bg-gray-300 text-gray-700 font-normal py-2 px-4 rounded inline-flex items-center">
-                        <span className="mr-1">Dropdown</span>
+                  <div className="py   min-w-[60px]">
+                    <div className="dropdown inline-block  relative">
+                      <button className="bg-gray-300 text-gray-700  font-normal py-2 px-4 rounded inline-flex items-center">
+                        <span className="">Dropdown</span>
                         <svg
                           className="fill-current h-4 w-4"
                           xmlns="http://www.w3.org/2000/svg"
@@ -131,9 +131,10 @@ export default function Request() {
                   </div>
                 </div>
 
-                <div className="pt-2">
+                <div className="pt-2  ">
                   <table
-                    className=" w-full  
+                    className=" w-full 
+                    
                   "
                   >
                     <thead className="border-b-2 border-gray-200">

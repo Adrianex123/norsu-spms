@@ -49,7 +49,7 @@
   z-index: 1;
   background-color: transparent;
   position: relative;
-  font-weight: 1000;
+
   -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
   box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
   transition: all 250ms;
@@ -88,7 +88,6 @@
   background-size: 100% auto;
   font-family: inherit;
   font-size: 17px;
-  padding: 0.6em 1.5em;
 }
 
 .button1:hover {
