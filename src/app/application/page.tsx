@@ -24,7 +24,7 @@ export default function Dashboard() {
               <div className=" text-white flex items-center absolute rounded-full py-4 px-4  left-4 -top-6"></div>
               <div className="w-12 h-12  bg-[url('../images/req.png')] bg-cover bg-no-repeat"></div>{" "}
               <div className="mt-8">
-                <p className="text-xl font-semibold my-2">45</p>
+                <p className="text-xl font-semibold my-2">45 </p>
 
                 <div className="flex space-x-2 text-gray-400 text-sm my-3">
                   <p>Total Approved this Month.</p>
