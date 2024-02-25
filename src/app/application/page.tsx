@@ -16,42 +16,48 @@ export default function Dashboard() {
         </p>
         <p className=" px-4 rounded-[15px]"> Main</p>
       </div>
-
       <div className="h-full   sm-w-full px-2 w-full">
-        <div className="flex items-center px-2 justify-center">
-          <div className="grid grid-cols-1  gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-            <div className="relative w-[350px] h-[181px] bg-white py-6 px-6 rounded-3xl my-4 ">
-              <div className=" text-white flex items-center absolute rounded-full py-4 px-4  left-4 -top-6"></div>
-              <div className="w-12 h-12  bg-[url('../images/req.png')] bg-cover bg-no-repeat"></div>{" "}
-              <div className="mt-8">
-                <p className="text-xl font-semibold my-2">45 </p>
+        <div className="flex items-center  px-2 justify-center">
+          <div className="grid grid-cols-1   gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+            <div className="parent">
+              <div className="relative card w-[350px] h-[181px] bg-white py-6 px-6 rounded-3xl my-4 ">
+                <div className=" text-indigo-950 logo flex items-center absolute rounded-full py-4 px-4  left-4 -top-6"></div>
+                <div className="w-12 h-12  bg-[url('../images/req.png')] bg-cover bg-no-repeat"></div>{" "}
+                <div className="mt-8">
+                  <p className="text-xl font-semibold my-2">45 </p>
 
-                <div className="flex space-x-2 text-gray-400 text-sm my-3">
-                  <p>Total Approved this Month.</p>
+                  <div className="flex space-x-2 text-gray-400 text-sm my-3">
+                    <p>Total Approved this Month.</p>
+                  </div>
                 </div>
               </div>
             </div>
+            <div
+              className="parent
+            "
+            >
+              <div className="relative card w-[350px] h-[181px] bg-white py-6 px-6 rounded-3xl my-4 ">
+                <div className=" text-white  logo flex items-center absolute rounded-full py-4 px-4  left-4 -top-6"></div>
+                <div className="w-12 h-12  bg-[url('../images/approve.png')] bg-cover bg-no-repeat"></div>{" "}
+                <div className="mt-8">
+                  <p className="text-xl font-semibold my-2">45 / 45</p>
 
-            <div className="relative w-[350px] h-[181px] bg-white py-6 px-6 rounded-3xl my-4 ">
-              <div className=" text-white flex items-center absolute rounded-full py-4 px-4  left-4 -top-6"></div>
-              <div className="w-12 h-12  bg-[url('../images/approve.png')] bg-cover bg-no-repeat"></div>{" "}
-              <div className="mt-8">
-                <p className="text-xl font-semibold my-2">45 / 45</p>
-
-                <div className="flex space-x-2 text-gray-400 text-sm my-3">
-                  <p>Total Approved this Month.</p>
+                  <div className="flex space-x-2 text-gray-400 text-sm my-3">
+                    <p>Total Approved this Month.</p>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="parent">
+              <div className="relative card w-[350px] h-[181px] bg-white py-6 px-6 rounded-3xl my-4 ">
+                <div className=" text-white logo flex items-center absolute rounded-full py-4 px-4  left-4 -top-6"></div>
+                <div className="w-12 h-12   bg-[url('../images/rejected.png')] bg-cover bg-no-repeat"></div>{" "}
+                <div className="mt-8">
+                  <p className="text-xl font-semibold my-2">0 </p>
 
-            <div className="relative w-[350px] h-[181px] bg-white py-6 px-6 rounded-3xl my-4 ">
-              <div className=" text-white flex items-center absolute rounded-full py-4 px-4  left-4 -top-6"></div>
-              <div className="w-12 h-12  bg-[url('../images/rejected.png')] bg-cover bg-no-repeat"></div>{" "}
-              <div className="mt-8">
-                <p className="text-xl font-semibold my-2">0 </p>
-
-                <div className="flex space-x-2 text-gray-400 text-sm my-3">
-                  <p>Total Declined this Month.</p>
+                  <div className="flex space-x-2 text-gray-400 text-sm my-3">
+                    <p>Total Declined this Month.</p>
+                  </div>
                 </div>
               </div>
             </div>

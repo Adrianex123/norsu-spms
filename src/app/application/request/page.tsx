@@ -137,7 +137,7 @@ export default function Request() {
                     
                   "
                   >
-                    <thead className="border-b-2 border-gray-200">
+                    <thead className="border-b-2 flexibleTable border-gray-200">
                       <tr>
                         <th>Tracking Number</th>
                         <th>Department</th>
