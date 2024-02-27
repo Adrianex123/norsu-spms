@@ -8,42 +8,171 @@ export const metadata: Metadata = {
 
 export default function Request() {
   return (
-    <div className="w-full h-full pt-4 bg-gray-300   flex-direction-row flex flex-col place-items-center">
-      <div className="w-[97%] h-16  flex flex-col ">
-        <div className=" w-50%">
-          <p className="pt-2 px-2  text-2xl font-extrabold  rounded-[50px]">
-            Request and Returns
-          </p>
-          <p className=" px-2">Main Office</p>
-        </div>
+    <div className="container py-2 bg-gray-300  mx-auto">
+      <div>
+        <p className="font-extrabold text-2xl px-4  rounded-[15px]">Request</p>
+        <p className=" px-4 rounded-[15px]"> Main</p>
       </div>
 
-      <div className=" py-4  w-[97%]">
-        <div className="grid bg-white w-full  text-gray-900 px-4 rounded-t-[15px]   py-4 grid-cols-5 gap-20  ">
-          <input
-            type="text"
-            placeholder=" Item Code"
-            className=" text-center rounded-[43px] bg-gray-400 px-12 text-black w-[247px] h-[39px]"
-          ></input>
-          <button className="  text-center bg bg-primary rounded-[43px] search w-[111px] h-[39px]">
-            Search
-          </button>
-        </div>
-        <div className="flex flex-col h-[550px]   bg-white  ">
-          {/* <table className=" col-span-9">
-            <th className="  text-center">
-              <th className="px-7">Item ID</th>
-              <th className="px-7">Department</th>
-              <th className="px-7">Requested By</th>
-              <th className="px-7">No. of Items</th>
-              <th className="px-7">Action</th>
-              <th className="px-7">Type</th>
-              <th className="px-7"> Delivered Mode</th>
-              <th className="px-7"> Status</th>
-              <th className="px-7"> Sent</th>
-              <th className="px-7"> Action</th>
-            </th>
-          </table> */}
+      <div className="container py-2 mx-auto">
+        <div className=" items-center px-4 justify-center">
+          <div className="grid grid-cols-1 ">
+            <div className="relative  h-[520px] bg-white px-4  rounded-3xl  ">
+              <div>
+                <div className="flex w-full pt-4 gap-2 shrink-0 md:w-max">
+                  <div className="w-full md:w-72">
+                    <div className="relative   h-10  min-w-[60px]">
+                      <div className="absolute grid  w-5 h-5 top-2/4 right-3 -translate-y-2/4 place-items-center text-blue-gray-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                          className="w-5 h-5 "
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <input
+                        className="peer h-full   w-full rounded-[7px] border border-blue-gray-200 border-t-transparent  bg-gray-300 px-3 py-2.5 !pr-9 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-200 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                        placeholder=" "
+                      />
+                      <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-200 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-200 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                        Search
+                      </label>
+                    </div>
+                  </div>
+
+                  <div className="py   min-w-[60px]">
+                    <div className="dropdown inline-block  relative">
+                      <button className="bg-gray-300 text-gray-700  font-normal py-2 px-4 rounded inline-flex items-center">
+                        <span className="">Dropdown</span>
+                        <svg
+                          className="fill-current h-4 w-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                        </svg>
+                      </button>
+                      <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
+                        <li className="">
+                          <a
+                            className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                            href="#"
+                          >
+                            One
+                          </a>
+                        </li>
+                        <li className="">
+                          <a
+                            className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                            href="#"
+                          >
+                            Two
+                          </a>
+                        </li>
+                        <li className="">
+                          <a
+                            className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                            href="#"
+                          >
+                            Three is the magic number
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="">
+                    <div className="dropdown inline-block relative">
+                      <button className="bg-gray-300 text-gray-700 font-normal py-2 px-4 rounded inline-flex items-center">
+                        <span className="mr-1">Pending</span>
+                        <svg
+                          className="fill-current h-4 w-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                        </svg>
+                      </button>
+                      <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
+                        <li className="">
+                          <a
+                            className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                            href="#"
+                          >
+                            One
+                          </a>
+                        </li>
+                        <li className="">
+                          <a
+                            className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                            href="#"
+                          >
+                            Two
+                          </a>
+                        </li>
+                        <li className="">
+                          <a
+                            className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                            href="#"
+                          >
+                            Three is the magic number
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div className=" container pt-4  ">
+                  <table
+                    className=" w-full text-left 
+                    
+                  "
+                  >
+                    <thead className="border-b-2  border-gray-200">
+                      <tr>
+                        <th>Tracking Number</th>
+                        <th>Department</th>
+                        <th>Requested by</th>
+                        <th> No.of Item</th>
+                        <th> Type</th>
+                        <th>Unit of Measure</th>
+                        <th>Delivery Mode</th>
+
+                        <th>Status</th>
+                        <th>Sent</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+
+                    <tbody className="">
+                      <tr>
+                        <td>123</td>
+                        <td>IT Dept</td>
+                        <td> John</td>
+                        <td>penntel pen</td>
+                        <td>Request</td>
+                        <td>2</td>
+                        <td>pick-up</td>
+                        <td>Approved</td>
+
+                        <td>Jan-2-2028</td>
+                        <td className="underline">view </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

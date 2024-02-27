@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 import Image from "next/image";
-import OtenNiSharleen from "../images/login-logo.png";
+import lgs from "../images/login-logo.png";
 
 export default function Sidebar() {
   return (
-    <div className="w-[17%] h-full flex flex-col place-items-center bg-[#17134e] py-10 px-8 gap-12">
-      <Image src={OtenNiSharleen} className="w-full" alt="Picture of Logo" />
+    <div className=" sticky  sm:[w-15%] md:w-[18%]  lg:w-[16%]  sidebar h-[642px] flex flex-col place-items-center bg-[#17134e] py-10 px-8 gap-2">
+      <Image src={lgs} className="w-full" alt="Picture of Logo" />
 
-      <div className="flex flex-col links w-full gap-2 ">
+      <div className="flex   flex-col links w-full gap-2 ">
         <Link
           href="/application"
           className="box text-white text-base font-extrabold py-4 px-2 rounded-lg"
