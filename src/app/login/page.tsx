@@ -22,7 +22,7 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full h-full flex flex-col justify-center place-items-center">
-            <div className="card w-[50%] h-auto">
+            <div className="w-[50%] h-auto">
               <h1 className="text-center text-slate-800 text-3xl font-bold">
                 Welcome back!
               </h1>

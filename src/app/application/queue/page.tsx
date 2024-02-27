@@ -7,14 +7,13 @@ export const metadata: Metadata = {
 
 export default function Queue() {
   return (
-    <div className="w-full h-full pt-3 flex flex-col justify-center place-items-center">
-      <div className="w-[97%] h-16 text-2xl font-extrabold flex flex-col ">
-        <div className=" bg-gray-500 w-50%">
-          <p className="py-2 px-2 rounded-[50px]">Welcome to Queue.</p>
-        </div>
+    <div className="container py-2 bg-gray-300  mx-auto">
+      <div>
+        <p className="font-extrabold text-2xl px-4  rounded-[15px]">Queue</p>
+        <p className=" px-4 rounded-[15px]"> Main</p>
       </div>
-      <div className="h-full py-2 px-2 bg-gray-500 w-[97%]">
-        <p className=" py-2 px-2"></p>
+      <div className="container py-2 mx-auto">
+        <div className=" items-center px-4 justify-center"></div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import lgs from "../images/login-logo.png";
 
 export default function Sidebar() {
   return (
-    <div className=" sticky top-0  sm:[w-12%] md:w-[16%]  lg:w-[16%]  sidebar h-[642px] flex flex-col place-items-center bg-[#17134e] py-10 px-8 gap-2">
+    <div className=" sticky  sm:[w-15%] md:w-[18%]  lg:w-[16%]  sidebar h-[642px] flex flex-col place-items-center bg-[#17134e] py-10 px-8 gap-2">
       <Image src={lgs} className="w-full" alt="Picture of Logo" />
 
       <div className="flex   flex-col links w-full gap-2 ">

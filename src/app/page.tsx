@@ -11,16 +11,20 @@ export default function Page() {
     setisClick(!isClick);
   };
   return (
-    <form action="/login" method="">
-      <main className="w-screen h-screen  bg-[url('../images/bgnature2.jpeg')] bg-cover bg-no-repeat flex  ">
+    <form action="/login" method="" className="">
+      <main className="w-screen h-screen  bg-[url('../images/wth4.jpg')] bg-cover bg-no-repeat flex  ">
         <div className="container mx-auto h-full">
-          <nav className="sticky top-0 z-10 block w-full max-w-full px-4 py-2 text-white  rounded-none  h-max   lg:px-8 lg:py-4">
-            <div className="flex items-center justify-between text-blue-gray-900">
-              <a
-                href="#"
-                className="mr-4 block cursor-pointer py-1.5 font-sans text-base font-medium leading-relaxed text-inherit antialiased"
-              ></a>
-              <div className="flex items-center gap-4">
+          <nav className="sticky waviy top-0 z-10 block w-full max-w-full px-4 py-2 text-white  rounded-none  h-max   lg:px-8 lg:py-4">
+            <div className="flex   items-center  justify-between text-blue-gray-900">
+              <div className="">
+                <a
+                  href="#"
+                  className="mr-4     block cursor-pointer py-1.5 font-sans text-base font-medium leading-relaxed text-inherit antialiased"
+                >
+                  Adrian Gwapo
+                </a>
+              </div>
+              <div className="flex nav backdrop-blur-3xl rounded-3xl  px-2  items-center gap-4">
                 <div className=" hidden mr-4 md: lg:block">
                   <ul className=" flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
                     <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
@@ -47,7 +51,7 @@ export default function Page() {
                 </div>
                 <div className="flex items-center gap-x-1">
                   <button
-                    className="hidden rounded-full bg-gradient-to-tr from-gray-900 to-gray-800 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                    className="hidden rounded-full bg-white py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-black shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
                     type="button"
                   >
                     <a href="/login">
@@ -65,8 +69,8 @@ export default function Page() {
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-6 h-6"
                       fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
+                      stroke="white"
+                      stroke-width="12"
                       viewBox="0 0 24 24"
                     >
                       <path d="M6 18L18 6M6 6l12 12"></path>
@@ -87,12 +91,12 @@ export default function Page() {
               </div>
             </div>
             {isClick && (
-              <div className="lg:hidden  text-center fixed top-0 right-0 bg-slate-900 w-2/4 h-full">
+              <div className="lg:hidden   text-center fixed top-0 right-0 bg-slate-400 w-2/4 h-full">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   <ul className="  gap-4 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
                     <div className=" ">
                       <div className=" px-4 pt-7 flex">
-                        <li className="block texy hover:bg-slate-800 w-full p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                        <li className="block  text-center hover:bg-slate-800 w-full p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
                           <a href="#" className="flex items-center">
                             Home
                           </a>

@@ -32,15 +32,44 @@
   background-color: white;
   color: black;
 }
-.nav {
-  place-items: left;
-  font-size: 25px;
-  color: white;
+.nav a {
+  font-size: 1rem;
+
+  font-weight: bolder;
+  transition: 0.3s ease-in-out;
+  border-bottom: 3px solid transparent;
+  width: fit-content;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: oblique;
+  font-variation-settings: "wdth" 100;
 }
 
-.nav:hover {
-  color: #e1f0da;
+.nav a:hover,
+nav a.active {
+  color: cyan;
+
   background-color: transparent;
+  border-bottom: 3px solid cyan;
+  font-weight: bold;
+
+  animation: both 0.5s ease-in-out;
+}
+.waviy {
+  position: relative;
+}
+.waviy span {
+  position: relative;
+  display: inline-block;
+  animation: flip 2s infinite;
+  animation-delay: calc(0.2s * var(--i));
+}
+@keyframes flip {
+  0%,
+  80% {
+    transform: rotateY(360deg);
+  }
 }
 .button1 {
   border: unset;
@@ -73,7 +102,7 @@
 }
 
 .button1:hover {
-  color: #e8e8e8;
+  color: black;
 }
 
 .button1:hover::before {
@@ -109,12 +138,6 @@
   100% {
     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
   }
-}
-
-.search {
-  color: white;
-  border-radius: 43px;
-  background-color: midnightblue;
 }
 
 .tableContainer {
@@ -175,11 +198,6 @@
   width: 100%;
 }
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
@@ -197,12 +215,12 @@
 }
 
 .parent {
-  padding-bottom: 18px;
+  padding-bottom: 1px;
 }
 
 .card {
-  height: 100%;
-  border-radius: 50px;
+  border-radius: 15px;
+
   background: linear-gradient(
     135deg,
     rgb(237, 241, 241) 100%,
@@ -244,46 +262,6 @@
   color: #00894d;
   font-weight: 900;
   font-size: 20px;
-}
-
-.bottom {
-  padding: 10px 12px;
-  transform-style: preserve-3d;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transform: translate3d(0, 0, 26px);
-}
-
-.bottom .view-more {
-  display: flex;
-  align-items: center;
-  width: 40%;
-  justify-content: flex-end;
-  transition: all 0.2s ease-in-out;
-}
-
-.bottom .view-more:hover {
-  transform: translate3d(0, 0, 10px);
-}
-
-.bottom .view-more .svg {
-  fill: none;
-  stroke: #00c37b;
-  stroke-width: 3px;
-  max-height: 15px;
-}
-
-.bottom .social-buttons-container .social-button:first-child {
-  transition: transform 0.2s ease-in-out 0.4s, box-shadow 0.2s ease-in-out 0.4s;
-}
-
-.bottom .social-buttons-container .social-button:nth-child(2) {
-  transition: transform 0.2s ease-in-out 0.6s, box-shadow 0.2s ease-in-out 0.6s;
 }
 
 .logo {

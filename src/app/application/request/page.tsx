@@ -131,13 +131,13 @@ export default function Request() {
                   </div>
                 </div>
 
-                <div className="pt-2  ">
+                <div className=" container pt-4  ">
                   <table
-                    className=" w-full 
+                    className=" w-full text-left 
                     
                   "
                   >
-                    <thead className="border-b-2 flexibleTable border-gray-200">
+                    <thead className="border-b-2  border-gray-200">
                       <tr>
                         <th>Tracking Number</th>
                         <th>Department</th>
@@ -149,6 +149,7 @@ export default function Request() {
 
                         <th>Status</th>
                         <th>Sent</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
 
@@ -164,6 +165,7 @@ export default function Request() {
                         <td>Approved</td>
 
                         <td>Jan-2-2028</td>
+                        <td className="underline">view </td>
                       </tr>
                     </tbody>
                   </table>
