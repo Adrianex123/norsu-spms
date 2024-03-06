@@ -10,12 +10,12 @@ export default function Stocks() {
   return (
     <div className="container py-2 bg-gray-300  mx-auto">
       <div>
-        <p className="font-extrabold text-2xl px-4  rounded-[15px]">Stocks</p>
-        <p className=" px-4 rounded-[15px]"> Main</p>
+        <p className="font-extrabold text-2xl   rounded-[15px]">Request</p>
+        <p className="  rounded-[15px]"> Main</p>
       </div>
 
-      <div className="container py-2 mx-auto">
-        <div className=" items-center px-4 justify-center">
+      <div className=" py-2">
+        <div className=" items-center  justify-center">
           <div className="grid grid-cols-1 ">
             <div className="relative  h-[520px] bg-white px-4  rounded-3xl  ">
               <div>
@@ -136,39 +136,7 @@ export default function Stocks() {
                     className=" w-full text-left 
                     
                   "
-                  >
-                    <thead className="border-b-2  border-gray-200">
-                      <tr>
-                        <th>Tracking Number</th>
-                        <th>Department</th>
-                        <th>Requested by</th>
-                        <th> No.of Item</th>
-                        <th> Type</th>
-                        <th>Unit of Measure</th>
-                        <th>Delivery Mode</th>
-
-                        <th>Status</th>
-                        <th>Sent</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-
-                    <tbody className="">
-                      <tr>
-                        <td>123</td>
-                        <td>IT Dept</td>
-                        <td> John</td>
-                        <td>penntel pen</td>
-                        <td>Request</td>
-                        <td>2</td>
-                        <td>pick-up</td>
-                        <td>Approved</td>
-
-                        <td>Jan-2-2028</td>
-                        <td className="underline">view </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  ></table>
                 </div>
               </div>
             </div>
