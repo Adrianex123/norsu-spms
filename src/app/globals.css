@@ -100,7 +100,9 @@ nav a.active {
   box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
   transition: all 250ms;
 }
-
+.svg-container:focus svg path {
+  stroke: black; /* Replace with the desired hover color */
+}
 .button1:hover {
   color: black;
 }
