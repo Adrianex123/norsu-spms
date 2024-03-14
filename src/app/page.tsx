@@ -11,9 +11,9 @@ export default function Page() {
     setisClick(!isClick);
   };
   return (
-    <form action="/login" method="" className="">
+    <form action="./app/auth" method="" className="">
       <main className="w-screen h-screen  bg-[url('../images/wth4.jpg')] bg-cover bg-no-repeat flex  ">
-        <div className="container mx-auto h-full">
+        <div className="container  mx-auto h-full">
           <nav className="sticky waviy top-0 z-10 block w-full max-w-full px-4 py-2 text-white  rounded-none  h-max   lg:px-8 lg:py-4">
             <div className="flex   items-center  justify-between text-blue-gray-900">
               <div className="">
@@ -21,14 +21,14 @@ export default function Page() {
                   href="#"
                   className="mr-4     block cursor-pointer py-1.5 font-sans text-base font-medium leading-relaxed text-inherit antialiased"
                 >
-                  Adrian Gwapo
+                  Adrian's Company Logo here
                 </a>
               </div>
               <div className="flex nav backdrop-blur-3xl rounded-3xl  px-2  items-center gap-4">
                 <div className=" hidden mr-4 md: lg:block">
                   <ul className=" flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
                     <li className="block p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                      <a href="#" className="flex items-center">
+                      <a href="/app" className="flex items-center">
                         Home
                       </a>
                     </li>
@@ -54,7 +54,7 @@ export default function Page() {
                     className="hidden rounded-full bg-white py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-black shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
                     type="button"
                   >
-                    <a href="/login">
+                    <a href="/auth">
                       <span>Login</span>
                     </a>
                   </button>
@@ -118,7 +118,7 @@ export default function Page() {
                       </div>
                       <div className="flex items-center px-4">
                         <li className="block hover:bg-slate-800  w-full p-1 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                          <a href="/login" className="flex items-center">
+                          <a href="/auth" className="flex items-center">
                             Login
                           </a>
                         </li>
