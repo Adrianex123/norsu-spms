@@ -2,8 +2,9 @@
 import React from "react";
 import type { Metadata } from "next";
 import Reacts, { PureComponent } from "react";
+
 import {
-  ComposedChart,
+  BarChart,
   Bar,
   XAxis,
   YAxis,
@@ -11,9 +12,11 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  LineChart,
   Line,
 } from "recharts";
 
+import Head from "next/head";
 import dynamic from "next/dynamic";
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 const data = [
@@ -21,31 +24,26 @@ const data = [
     name: "January",
     uv: 4000,
     pv: 2400,
-    amt: 2400,
   },
   {
     name: "February",
     uv: 3000,
     pv: 1398,
-    amt: 2210,
   },
   {
     name: "March",
     uv: 2000,
     pv: 9800,
-    amt: 2290,
   },
   {
     name: "April",
     uv: 2780,
     pv: 3908,
-    amt: 2000,
   },
   {
     name: "May",
     uv: 1890,
     pv: 4800,
-    amt: 2181,
   },
   {
     name: "June",
@@ -95,7 +93,7 @@ const data = [
 export default function Dashboard() {
   return (
     <div
-      className="max-w-full  max-h-full py-2 w-full h-full   bg-gray-700   
+      className="max-w-full  max-h-full py-2 w-full h-full  bg-gray-300   
     flex-col place-items-center"
     >
       <div>
@@ -106,9 +104,9 @@ export default function Dashboard() {
       </div>
       <div className="h-full    sm-w-full px-2 w-full">
         <div className=" items-center  px-2 justify-center">
-          <div className="grid grid-cols-1   gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1   gap-4 sm:grid-cols-3 lg:grid-cols-3s xl:grid-cols-3">
             <div className="parent">
-              <div className="relative card  bg-white py-6 px-6  my-4 ">
+              <div className="relative card  rounded-3xl bg-white py-6 px-6  my-4 ">
                 <div className=" text-indigo-950 logo flex items-center absolute rounded-full py-4 px-4  left-4 -top-6"></div>
                 <div className="w-12 h-12  bg-[url('../images/req.png')] bg-cover bg-no-repeat"></div>
                 <div className="mt-4">
@@ -122,7 +120,7 @@ export default function Dashboard() {
             </div>
 
             <div className="parent">
-              <div className="relative card bg-white py-6 px-6 rounded-3xl my-4 ">
+              <div className="relative card  bg-white py-6 px-6 rounded-3xl my-4 ">
                 <div className=" text-white  logo flex items-center absolute rounded-full py-4 px-4  left-4 -top-6"></div>
                 <div className="w-12 h-12  bg-[url('../images/approve.png')] bg-cover bg-no-repeat"></div>{" "}
                 <div className="mt-4">
@@ -151,46 +149,62 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="h-full  text-gray-800   w-full">
-        <div className="flex items-center px-2 justify-center">
-          <div className="grid grid-cols-1  gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-            <div className="relative col-span-2  bg-slate-200 py-4 px-4 rounded-3xl my-4 ">
-              <div className="justify-center flex">
-                <div className="w-full pt-4  flex h-[350px]">
-                  <ResponsiveContainer>
-                    <ComposedChart
-                      width={400}
-                      height={400}
+      <div className="h-full   sm-w-full px-2 w-full">
+        <div className=" items-center  px-2 justify-center">
+          <div className="grid grid-cols-1   gap-4 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
+            <div className="parent col-span-3">
+              <div className="relative card rounded-3xl  bg-white py-6    ">
+                <div className="w-full pt-4  text-sm flex h-[280px]">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                      width={500}
+                      height={300}
                       data={data}
                       margin={{
-                        top: 20,
-                        right: 20,
-                        bottom: 20,
-                        left: 20,
+                        top: 5,
+                        right: 50,
+                        left: 10,
+                        bottom: 5,
                       }}
+                      barSize={30}
                     >
-                      <CartesianGrid stroke="#f5f5f5" />
-                      <XAxis dataKey="name" scale="band" />
+                      <XAxis
+                        dataKey="name"
+                        scale="point"
+                        padding={{ left: 10, right: 10 }}
+                      />
                       <YAxis />
                       <Tooltip />
-                      <Bar dataKey="uv" barSize={30} fill="#413ea0" />
-                      <Line type="natural" dataKey="uv" stroke="#ff7300" />
-                    </ComposedChart>
+                      <Legend />
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <Bar
+                        dataKey="pv"
+                        fill="#8884d8"
+                        background={{ fill: "#eee" }}
+                      />
+                      <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                    </BarChart>
                   </ResponsiveContainer>
                 </div>
+
+                <p className="font-semibold text-center align-text-bottom text-sm text-gray-500">
+                  University usage:
+                </p>
               </div>
-              <p className="font-semibold text-center align-text-bottom text-sm text-gray-500">
-                University usage:
-              </p>
             </div>
-            <div className="relative w-[350px] h-[full] bg-white py-4  rounded-3xl my-4 ">
-              <div className=" text-black flex items-center absolute rounded-full     left-4 ">
-                <a href="../../application/activity_logs">Activity Logs</a>
+
+            <div className="parent">
+              <div className="relative card bg-white py-6 px-6 rounded-3xl ">
+                <div className=" text-white  logo flex items-center absolute rounded-full py-4 px-4  left-4 -top-6"></div>
+                <div className="w-12 h-12  bg-[url('../images/approve.png')] bg-cover bg-no-repeat"></div>{" "}
+                <div className="mt-4">
+                  <p className="text-xl font-semibold my-2">45 / 45</p>
+
+                  <div className="flex space-x-2  text-blue-800 text-sm my-3">
+                    <p>Total Approved this Month.</p>
+                  </div>
+                </div>
               </div>
-
-              <p className="text-xl font-semibold my-2"></p>
-
-              <div className="flex space-x-2 text-gray-400 text-sm my-3"></div>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Stocks() {
   return (
-    <div className="container py-2 bg-gray-300  mx-auto">
+    <div className="container h-screen py-2 bg-gray-300  mx-auto">
       <div>
         <p className="font-extrabold text-2xl   rounded-[15px]">Request</p>
         <p className="  rounded-[15px]"> Main</p>

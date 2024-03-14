@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function Queue() {
   return (
-    <div className="container py-2 bg-gray-300  mx-auto">
+    <div className="container h-screen py-2 bg-gray-300  mx-auto">
       <div>
         <p className="font-extrabold text-2xl px-4  rounded-[15px]">Queue</p>
         <p className=" px-4 rounded-[15px]"> Main</p>

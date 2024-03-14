@@ -1,12 +1,20 @@
+"use client";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-
+import { text } from "stream/consumers";
 import Image from "next/image";
 import loginLogo from "../../images/login-logo.png";
 import loginIllustration from "../../images/login-illustration.png";
+import { Router } from "lucide-react";
+import React from "react";
+import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
+import { supabaseBrowser } from "@/lib/supabase/browser";
 
-export default function Home() {
+export default function Login() {
   return (
-    <form action="./dashboard" method="post">
+    <form action="./application" method="">
       <main className="w-screen bg-[url('../images/bg-left.png')] bg-cover bg-no-repeat h-screen grid grid-cols-2">
         <div className="w-[85%] h-full  flex flex-col justify-center place-items-center ">
           <Image src={loginLogo} alt="norsu-logo" />
@@ -29,7 +37,8 @@ export default function Home() {
               <div className="w-full flex flex-col gap-2">
                 <span>Email</span>
                 <input
-                  type="text"
+                  type="email"
+                  name="email"
                   placeholder="example@gmail.com"
                   className="border-b-2 rounded-3xl  p-4"
                 />
@@ -39,6 +48,7 @@ export default function Home() {
                 <input
                   type="password"
                   placeholder="Password"
+                  name="password"
                   className="border-b-2 rounded-3xl  p-4"
                 />
               </div>
@@ -47,15 +57,27 @@ export default function Home() {
                   <input type="checkbox" />
                   <label className="text-lg">Remember me</label>
                 </div>
-                <Link
-                  href={"/application"}
-                  className="text-lg px-10 py-3 rounded-full text-white bg-[#17134E]"
-                >
-                  Login
-                </Link>
               </div>
+
+              <button className="  w-full flex justify-center place-items-center gap-8 text-lg px-10 py-3  rounded-lg text-white bg-[#17134E]  ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-width="4"
+                  stroke-linecap="butt"
+                  stroke-linejoin="round"
+                >
+                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3" />
+                </svg>
+                Login
+              </button>
+
               <div className="w-full flex justify-center mt-4 gap-4">
-                <p>Cant log in?</p>{" "}
+                <p>Cant log in?</p>
                 <a href="/" className="text-[#17134E] underline">
                   Contact Admin
                 </a>

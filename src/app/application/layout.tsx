@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "../globals.css";
-import Sidebar from "@/components/sidebar";
-import Sidebr from "@/components/sidebar/SidebarLinkGroup";
-
+import Sidebar from "@/components/sidebar/sidebar";
+import Header from "@/components/header/header";
+import HeaderDropdown from "@/components/header/DropdownUser";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
+        <Header />
         <div className=" md:w-54 lg:w-full flex">
           <Sidebar />
           {children}
