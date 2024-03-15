@@ -6,6 +6,7 @@ import Reacts, { PureComponent } from "react";
 import {
   BarChart,
   Bar,
+  ComposedChart,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -18,6 +19,8 @@ import {
 
 import Head from "next/head";
 import dynamic from "next/dynamic";
+import Chartdaw from "@/components/chart/chartdw";
+import Chartnapod from "@/components/chart/chartnapod";
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 const data = [
   {
@@ -182,7 +185,7 @@ export default function Dashboard() {
                         fill="#8884d8"
                         background={{ fill: "#eee" }}
                       />
-                      <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                      <Line type="monotone" dataKey="pv" stroke="#ff7300" />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
@@ -205,6 +208,40 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="h-full py-4   sm-w-full px-2 w-full">
+        <div className=" items-center  px-2 justify-center">
+          <div className="grid grid-cols-1   gap-4 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
+            <div className="parent col-span-3">
+              <div className="relative card rounded-3xl  bg-white py-6    ">
+                <ResponsiveContainer width="100%" height="100%">
+                  <Chartdaw />
+                </ResponsiveContainer>
+              </div>
+
+              <p className="font-semibold text-center align-text-bottom text-sm text-gray-500">
+                University usage:
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="h-full py-4   sm-w-full px-2 w-full">
+        <div className=" items-center  px-2 justify-center">
+          <div className="grid grid-cols-1   gap-4 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
+            <div className="parent col-span-3">
+              <div className="relative card rounded-3xl  bg-white py-6    ">
+                <ResponsiveContainer width="100%" height="100%">
+                  <Chartnapod />
+                </ResponsiveContainer>
+              </div>
+
+              <p className="font-semibold text-center align-text-bottom text-sm text-gray-500">
+                University usage:
+              </p>
             </div>
           </div>
         </div>

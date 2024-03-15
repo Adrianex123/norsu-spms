@@ -82,3 +82,29 @@ export const modes = [
     icon: ArrowUpIcon,
   },
 ];
+
+export const departments = [
+  {
+    label: "pick-up",
+    value: "medium",
+    icon: ArrowRightIcon,
+  },
+  {
+    label: "drop-off",
+    value: "high",
+    icon: ArrowUpIcon,
+  },
+];
+
+export const kinds = [
+  {
+    label: "paper",
+    value: "medium",
+    icon: ArrowRightIcon,
+  },
+  {
+    label: "ballpen",
+    value: "high",
+    icon: ArrowUpIcon,
+  },
+];
