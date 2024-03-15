@@ -1,6 +1,5 @@
 "use client";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { useState } from "react";
+
 import Link from "next/link";
 
 import Image from "next/image";
@@ -12,23 +11,6 @@ import { useRouter } from "next/navigation";
 import { text } from "stream/consumers";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
-  const router = useRouter();
-  const supabase = createClientComponentClient();
-
-  const handleSignUp = async () => {
-    await supabase.auth.signUp({
-      email,
-      password,
-      options: { emailRedirectTo: "${location.origin}/callback" },
-    });
-    router.refresh();
-    setEmail("");
-    setPassword("");
-  };
-
   return (
     <main className="w-screen bg-[url('../images/bg-left.png')] bg-cover bg-no-repeat h-screen grid grid-cols-2">
       <div className="w-[85%] h-full  flex flex-col justify-center place-items-center ">
@@ -54,7 +36,6 @@ export default function Login() {
               type="email"
               name="email"
               placeholder="example@gmail.com"
-              onChange={(e) => setEmail(e.target.value)}
               className="border-b-2 rounded-3xl  p-4"
             />
           </div>
@@ -62,17 +43,12 @@ export default function Login() {
             <input
               type="password"
               placeholder="Password"
-              value={password}
               name="password"
-              onChange={(e) => setPassword(e.target.value)}
               className="border-b-2 rounded-3xl  p-4"
             />
           </div>
           <div className="w-full py-2 flex flex-col gap-2">
-            <button
-              onClick={handleSignUp}
-              className="text-lg px-10 py-2  rounded-full text-white bg-[#17134E]"
-            >
+            <button className="text-lg px-10 py-2  rounded-full text-white bg-[#17134E]">
               Submit
             </button>
           </div>
