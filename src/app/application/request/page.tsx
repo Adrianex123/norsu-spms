@@ -5,13 +5,9 @@ import Tasks from "./data/tasks.json";
 
 export default function Transactions() {
   return (
-    <div className="h-full   sm-w-full px-2 w-full">
-      <div className=" items-center  px-2 justify-center">
-        <div className="relative card rounded-3xl  bg-white py-6    ">
-          <div className="w-full h-full flex">
-            <DataTable columns={columns} data={Tasks} />
-          </div>
-        </div>
+    <div className="relative  overflow-auto card rounded-3xl px-4 bg-white py-8    ">
+      <div className="w-full h-full flex">
+        <DataTable columns={columns} data={Tasks} />
       </div>
     </div>
   );

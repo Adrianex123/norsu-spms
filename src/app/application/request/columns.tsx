@@ -5,7 +5,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 
-import { labels, priorities, statuses } from "./data/data";
+import { priorities, statuses, kinds, departments, modes } from "./data/data";
 import { Task } from "./data/schema";
 import { DataTableColumnHeader } from "./data-table-column-header";
 import { DataTableRowActions } from "./data-table-row-actions";
@@ -45,90 +45,71 @@ export const columns: ColumnDef<Task>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "Department",
+    accessorKey: "department",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Department" />
+      <DataTableColumnHeader column={column} title="Status" />
     ),
     cell: ({ row }) => {
-      const label = labels.find((label) => label.value === row.original.label);
+      const department = departments.find(
+        (department) => department.value === row.getValue("department")
+      );
+
+      if (!department) {
+        return null;
+      }
 
       return (
-        <div className="flex space-x-2">
-          {label && <Badge variant="outline">{label.label}</Badge>}
-          <span className="max-w-[500px] truncate font-medium">
-            {row.getValue("title")}
-          </span>
+        <div className="flex w-[100px] items-center">
+          <span>{department.label}</span>
         </div>
       );
     },
-  },
-  {
-    accessorKey: "title",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Requested by" />
-    ),
-    cell: ({ row }) => {
-      const label = labels.find((label) => label.value === row.original.label);
-
-      return (
-        <div className="flex space-x-2">
-          {label && <Badge variant="outline">{label.label}</Badge>}
-          <span className="max-w-[500px] truncate font-medium">
-            {row.getValue("title")}
-          </span>
-        </div>
-      );
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id));
     },
   },
   {
-    accessorKey: "title",
+    accessorKey: "noItems",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="No. of Items" />
+      <DataTableColumnHeader column={column} title="Number of Items" />
     ),
-    cell: ({ row }) => {
-      const label = labels.find((label) => label.value === row.original.label);
-
-      return (
-        <div className="flex space-x-2">
-          {label && <Badge variant="outline">{label.label}</Badge>}
-          <span className="max-w-[500px] truncate font-medium">
-            {row.getValue("title")}
-          </span>
-        </div>
-      );
-    },
+    cell: ({ row }) => (
+      <div className="w-[80px]">{row.getValue("noItems")}</div>
+    ),
+    enableSorting: false,
+    enableHiding: false,
   },
   {
-    accessorKey: "Department",
+    accessorKey: "kind",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Type" />
     ),
     cell: ({ row }) => {
-      const label = labels.find((label) => label.value === row.original.label);
+      const kind = kinds.find((kind) => kind.value === row.original.kind);
 
       return (
         <div className="flex space-x-2">
-          {label && <Badge variant="outline">{label.label}</Badge>}
+          {kind && <Badge variant="outline">{kind.label}</Badge>}
           <span className="max-w-[500px] truncate font-medium">
-            {row.getValue("title")}
+            {row.getValue("kind")}
           </span>
         </div>
       );
     },
   },
   {
-    accessorKey: "Department",
+    accessorKey: "mode",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Delivery Mode" />
     ),
     cell: ({ row }) => {
-      const label = labels.find((label) => label.value === row.original.label);
+      const mode = modes.find((mode) => mode.value === row.original.mode);
 
       return (
         <div className="flex space-x-2">
-          {label && <Badge variant="outline">{label.label}</Badge>}
+          {mode && <Badge variant="outline">{mode.label}</Badge>}
           <span className="max-w-[500px] truncate font-medium">
-            {row.getValue("title")}
+            {row.getValue("mode")}
           </span>
         </div>
       );

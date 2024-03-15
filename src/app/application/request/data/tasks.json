@@ -1,93 +1,46 @@
 [
   {
     "id": "8782",
-    "title": "awdwdada",
+    "department": "It",
     "status": "in progress",
-    "label": "",
-    "priority": "medium"
+    "label": "adrian",
+    "requestedBy": "Adrian",
+    "noItems": 1,
+    "priority": "medium",
+    "kind": "paper",
+    "mode": "pick-up"
   },
   {
-    "id": "7878",
-    "title": "awdwdada",
-    "status": "backlog",
-    "label": "",
-    "priority": "medium"
-  },
-  {
-    "id": "7839",
-    "title": "awdwdada",
-    "status": "todo",
-    "label": "",
-    "priority": "high"
-  },
-  {
-    "id": "5562",
-    "title": "awdwdada",
-    "status": "backlog",
-    "label": "",
-    "priority": "medium"
-  },
-  {
-    "id": "8686",
-    "title": "awdwdada",
-    "status": "canceled",
-    "label": "",
-    "priority": "medium"
-  },
-  {
-    "id": "1280",
-    "title": "awdwdada",
-    "status": "done",
-    "label": "",
-    "priority": "high"
-  },
-  {
-    "id": "7262",
-    "title": "awdwdada",
-    "status": "done",
-    "label": "",
-    "priority": "high"
-  },
-  {
-    "id": "1138",
-    "title": "awdwdada",
+    "id": "1223",
+    "department": "Education",
     "status": "in progress",
-    "label": "",
-    "priority": "medium"
+    "label": "adrian",
+    "requestedBy": "Kate",
+    "noItems": 4,
+    "priority": "medium",
+    "kind": "ballpen",
+    "mode": "drop-off"
   },
   {
-    "id": "7184",
-    "title": "awdwdada",
-    "status": "todo",
-    "label": "",
-    "priority": "low"
-  },
-  {
-    "id": "5160",
-    "title": "awdwdada",
+    "id": "8782",
+    "department": "It",
     "status": "in progress",
-    "label": "",
-    "priority": "high"
+    "label": "adrian",
+    "requestedBy": "Adrian",
+    "noItems": 1,
+    "priority": "medium",
+    "kind": "paper",
+    "mode": "pick-up"
   },
   {
-    "id": "5618",
-    "title": "awdwdada",
-    "status": "done",
-    "label": "",
-    "priority": "medium"
-  },
-  {
-    "id": "6699",
-    "title": "awdwdada",
-    "status": "backlog",
-    "label": "",
-    "priority": "medium"
-  },
-  {
-    "id": "2858",
-    "title": "awdwdada",
-    "status": "backlog",
-    "label": "",
-    "priority": "medium"
+    "id": "8782",
+    "department": "It",
+    "status": "in progress",
+    "label": "adrian",
+    "requestedBy": "Adrian",
+    "noItems": 1,
+    "priority": "medium",
+    "kind": "paper",
+    "mode": "pick-up"
   }
 ]
