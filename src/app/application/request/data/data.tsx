@@ -85,14 +85,12 @@ export const modes = [
 
 export const departments = [
   {
-    label: "pick-up",
-    value: "medium",
-    icon: ArrowRightIcon,
+    label: "It",
+    value: "It",
   },
   {
-    label: "drop-off",
-    value: "high",
-    icon: ArrowUpIcon,
+    label: "Education",
+    value: "Education",
   },
 ];
 
