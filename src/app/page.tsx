@@ -21,7 +21,7 @@ export default function Page() {
                   href="#"
                   className="mr-4     block cursor-pointer py-1.5 font-sans text-base font-medium leading-relaxed text-inherit antialiased"
                 >
-                  Adrian Gwapo
+                  Adrian&apos;s Company Logo here
                 </a>
               </div>
               <div className="flex nav backdrop-blur-3xl rounded-3xl  px-2  items-center gap-4">
