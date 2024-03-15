@@ -27,7 +27,7 @@ export default function Header() {
     setIsOpen(!isOpen);
   };
   return (
-    <nav className="  bg-[#17134e]">
+    <nav className=" sm:hidden bg-[#17134e]">
       <div className="mx-auto max-w-7xl sm:px-4 lg:px-8">
         <div className="relative flex h-16 items-center justify-end">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -57,7 +57,7 @@ export default function Header() {
           </div>
 
           <div className="absolute inset-y-0 h right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <div className="w-20">
+            <div className="w-20 sm:hidden">
               <Dropdown
                 showArrow
                 radius="sm"
@@ -65,10 +65,10 @@ export default function Header() {
                   content: "p-0 border-small border-divider bg-background",
                 }}
               >
-                <DropdownTrigger className="w-30 ">
+                <DropdownTrigger className="w-30   ">
                   <Button variant="ghost" disableRipple>
                     <div>
-                      <div className=" rounded-lg px-4   left-5">
+                      <div className=" rounded-lg px-4    left-5">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="30"
