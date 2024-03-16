@@ -11,7 +11,7 @@ export default function Sidebar() {
   return (
     <nav
       className="   
-    md:w-[23%]  lg:w-[16%] w:[15%]-hidden  sidebar h-[screen] flex flex-col place-items-center bg-[#31363F] py-8 px-8 gap-2"
+    md:w-[23%]  lg:w-[16%] w:[15%]-hidden  h-content min-h-[100vh] flex flex-col place-items-center bg-[#31363F] py-8 px-8 gap-2"
     >
       <Image src={lgs} className="w-full" alt="Picture of Logo" />
 
