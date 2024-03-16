@@ -18,68 +18,7 @@ export default function Stocks() {
       className="h-full  w-full rounded-lg border"
     >
       <ResizableHandle withHandle />
-      <ResizablePanel className="w-full">
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-        <div className="flex  items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-          <span className="font-semibold">Content</span>
-        </div>
-      </ResizablePanel>
+      <ResizablePanel className="w-full"></ResizablePanel>
     </ResizablePanelGroup>
   );
 }

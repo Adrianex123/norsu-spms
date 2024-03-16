@@ -7,7 +7,12 @@ import {
   CrossCircledIcon,
   QuestionMarkCircledIcon,
   StopwatchIcon,
+  UpdateIcon,
 } from "@radix-ui/react-icons";
+import { CiDeliveryTruck } from "react-icons/ci";
+import { FcApproval } from "react-icons/fc";
+import { FcCancel } from "react-icons/fc";
+import { FcProcess } from "react-icons/fc";
 
 export const labels = [
   {
@@ -26,46 +31,37 @@ export const labels = [
 
 export const statuses = [
   {
-    value: "Pp",
-    label: "Backlog",
-    icon: QuestionMarkCircledIcon,
+    value: "rejected",
+    label: "rejected",
+    icon: FcCancel,
   },
   {
-    value: "todo",
-    label: "Todo",
-    icon: CircleIcon,
+    value: "pending",
+    label: "pending ",
+    icon: FcProcess,
   },
+
   {
-    value: "in progress",
-    label: "In Progress",
-    icon: StopwatchIcon,
-  },
-  {
-    value: "done",
-    label: "Done",
-    icon: CheckCircledIcon,
-  },
-  {
-    value: "canceled",
-    label: "Canceled",
-    icon: CrossCircledIcon,
+    value: "approved",
+    label: "approved",
+    icon: FcApproval,
   },
 ];
 
 export const priorities = [
   {
-    label: "Low",
-    value: "low",
+    label: "January-12,2024",
+    value: "January-12,2024",
     icon: ArrowDownIcon,
   },
   {
-    label: "Medium",
-    value: "medium",
+    label: "January 15,2024",
+    value: "January 15,2024",
     icon: ArrowRightIcon,
   },
   {
-    label: "High",
-    value: "high",
+    label: "May 12,2024",
+    value: "May 12,2024",
     icon: ArrowUpIcon,
   },
 ];
@@ -96,12 +92,12 @@ export const departments = [
 
 export const kinds = [
   {
-    label: "paper",
+    label: "request",
     value: "medium",
     icon: ArrowRightIcon,
   },
   {
-    label: "ballpen",
+    label: "return",
     value: "high",
     icon: ArrowUpIcon,
   },

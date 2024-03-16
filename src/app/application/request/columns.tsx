@@ -40,14 +40,14 @@ export const columns: ColumnDef<Task>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Tracking Number" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="w-[70px]">{row.getValue("id")}</div>,
     enableSorting: false,
     enableHiding: false,
   },
   {
     accessorKey: "department",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Status" />
+      <DataTableColumnHeader column={column} title="Department" />
     ),
     cell: ({ row }) => {
       const department = departments.find(
@@ -59,7 +59,7 @@ export const columns: ColumnDef<Task>[] = [
       }
 
       return (
-        <div className="flex w-[100px] items-center">
+        <div className="flex w-[70px] items-center">
           <span>{department.label}</span>
         </div>
       );
@@ -69,15 +69,22 @@ export const columns: ColumnDef<Task>[] = [
     },
   },
   {
-    accessorKey: "noItems",
+    accessorKey: "requestedBy",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Number of Items" />
+      <DataTableColumnHeader column={column} title="Requested by" />
     ),
     cell: ({ row }) => (
-      <div className="w-[80px]">{row.getValue("noItems")}</div>
+      <div className="w-[70px]">{row.getValue("requestedBy")}</div>
     ),
-    enableSorting: false,
-    enableHiding: false,
+  },
+  {
+    accessorKey: "noItems",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Qty" />
+    ),
+    cell: ({ row }) => (
+      <div className="w-[70px]">{row.getValue("noItems")}</div>
+    ),
   },
   {
     accessorKey: "kind",
@@ -108,7 +115,7 @@ export const columns: ColumnDef<Task>[] = [
       return (
         <div className="flex space-x-2">
           {mode && <Badge variant="outline">{mode.label}</Badge>}
-          <span className="max-w-[500px] truncate font-medium">
+          <span className="max-w-[70px] truncate font-medium">
             {row.getValue("mode")}
           </span>
         </div>
@@ -169,9 +176,13 @@ export const columns: ColumnDef<Task>[] = [
       return value.includes(row.getValue(id));
     },
   },
-
   {
-    id: "actions",
+    accessorKey: "id",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Action" />
+    ),
     cell: ({ row }) => <DataTableRowActions row={row} />,
+    enableSorting: false,
+    enableHiding: false,
   },
 ];
