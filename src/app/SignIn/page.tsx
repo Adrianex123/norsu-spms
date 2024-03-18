@@ -1,74 +1,70 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import loginLogo from "../../images/login-logo.png";
 import loginIllustration from "../../images/login-illustration.png";
-
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
+import React from "react";
 import {
-  Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { useForm, FormProvider, useFormContext } from "react-hook-form";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Form } from "react-hook-form";
+import * as z from "zod";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { signInWithEmailAndPassword } from "../auth-server-action";
+import { Link } from "lucide-react";
+import { redirect } from "next/navigation";
 
-const FormSchema = z
-  .object({
-    email: z.string().email(),
-    password: z.string().min(8, {
-      message: "Password is required.",
-    }),
-    confirm: z.string().min(8, {
-      message: "Password is required.",
-    }),
-  })
-  .refine((data) => data.confirm === data.password, {
-    message: "Password did not match",
-    path: ["confirm"],
+const loginSchema = z.object({
+  email: z.string().email({ message: "Must be a valid email" }),
+  password: z
+    .string()
+    .min(8, { message: "Password must be at least 8 characters" }),
+});
+
+export default function SignIn() {
+  const [isPending, startTransition] = React.useTransition();
+
+  const form = useForm<z.infer<typeof loginSchema>>({
+    resolver: zodResolver(loginSchema),
   });
 
-export default function SignUp() {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: {
-      email: "",
-      password: "",
-      confirm: "",
-    },
-  });
-  async function onSubmit(data: z.infer<typeof FormSchema>) {
-    const result = await signInWithEmailAndPassword(data);
-    const { error } = JSON.parse(result);
+  async function onSubmit(data: z.infer<typeof loginSchema>) {
+    startTransition(async () => {
+      const result = await signInWithEmailAndPassword(data);
+      const { error } = JSON.parse(result);
 
-    if (error?.message) {
-      toast({
-        variant: "destructive",
-        title: "You submitted the following values:",
-        description: (
-          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            <code className="text-white">{error.message}</code>
-          </pre>
-        ),
-      });
-    } else {
-      toast({
-        title: "You submitted the following values:",
-        description: (
-          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            <code className="text-white">Succesfully Registered</code>
-          </pre>
-        ),
-      });
-    }
+      if (error?.message) {
+        toast({
+          variant: "destructive",
+          title: "You submitted the following values:",
+          description: (
+            <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+              <code className="text-white">{error.message}</code>
+            </pre>
+          ),
+        });
+      } else {
+        toast({
+          title: "You succesfully login yourself!",
+          description: (
+            <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+              <code className="text-white">Succesfully Login</code>
+            </pre>
+          ),
+        });
+      }
+      return redirect("/application");
+    });
   }
 
   return (
@@ -89,9 +85,10 @@ export default function SignUp() {
         <div className="w-full h-full flex flex-col justify-center place-items-center">
           <div className="w-[50%] h-auto">
             <h1 className="text-center  text-slate-800 text-3xl font-bold">
-              SignUp
+              Signin
             </h1>
-            <Form {...form}>
+
+            <FormProvider {...form}>
               <div className="w-full py-2 flex flex-col gap-2">
                 <FormField
                   control={form.control}
@@ -135,39 +132,18 @@ export default function SignUp() {
                   )}
                 />
               </div>
-              <div className="w-full py-2 flex flex-col gap-2">
-                <FormField
-                  control={form.control}
-                  name="confirm"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Confirm Password</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="confirm password"
-                          {...field}
-                          type="password"
-                          onChange={field.onChange}
-                          className="border-b-2 rounded-3xl  p-4"
-                        />
-                      </FormControl>
+            </FormProvider>
+            <div className="w-full py-2 flex flex-col gap-2">
+              <Button
+                type="submit"
+                className="text-lg px-10 py-2  rounded-full text-white bg-[#17134E]"
+              >
+                Submit
+              </Button>
+            </div>
 
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <div className="w-full py-2 flex flex-col gap-2">
-                <Button
-                  type="submit"
-                  className="text-lg px-10 py-2  rounded-full text-white bg-[#17134E]"
-                >
-                  Submit
-                </Button>
-              </div>
-            </Form>
             <div className="text-sm px-10 py-2 text-center rounded-full text-blue-500">
-              <Link href={"/SignIn"}>Gusto baka musign-in na dol??</Link>
+              <a href={"/signUp"}>Gusto baka musign-up na dol??</a>
             </div>
           </div>
         </div>

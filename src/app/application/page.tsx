@@ -2,7 +2,9 @@
 import React from "react";
 import type { Metadata } from "next";
 import Reacts, { PureComponent } from "react";
-
+import { createClient } from "@/utils/supabase/server";
+import Link from "next/link";
+import { redirect } from "next/navigation";
 import {
   BarChart,
   Bar,
@@ -93,7 +95,7 @@ const data = [
   },
 ];
 
-export default function Dashboard() {
+export default async function Dashboard() {
   return (
     <div
       className="max-w-full  max-h-full py-2 w-full h-full  bg-gray-300   

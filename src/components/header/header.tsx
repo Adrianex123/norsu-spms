@@ -4,6 +4,7 @@ import Reacts, { useState } from "react";
 import Image from "next/image";
 import lgs from "../images/login-logo.png";
 import React from "react";
+import { createClient } from "@/utils/supabase/server";
 import {
   Dropdown,
   DropdownTrigger,
@@ -20,12 +21,21 @@ interface HeaderProps {
   headerOpen: boolean;
   setHeaderOpen: (arg: boolean) => void;
 }
-export default function Header() {
+export default async function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+  const supabase = createClient();
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  if (session) {
+    return undefined;
+  }
   return (
     <nav className=" sm:hidden bg-[#17134e]">
       <div className="mx-auto max-w-7xl sm:px-4 lg:px-8">
@@ -56,7 +66,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="absolute inset-y-0 h right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <div className="w-20 sm:hidden">
               <Dropdown
                 showArrow
@@ -68,7 +78,7 @@ export default function Header() {
                 <DropdownTrigger className="w-30   ">
                   <Button variant="ghost" disableRipple>
                     <div>
-                      <div className=" rounded-lg px-4    left-5">
+                      <div className=" rounded-lg px-4     left-5">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="30"
@@ -91,7 +101,7 @@ export default function Header() {
                 <DropdownMenu
                   aria-label="Custom item styles"
                   disabledKeys={["profile"]}
-                  className="p-3"
+                  className="p-3  w-full h-full bg-blue"
                   itemClasses={{
                     base: [
                       "rounded-md",
@@ -128,7 +138,36 @@ export default function Header() {
                       />
                     </DropdownItem>
 
-                    <DropdownItem key="settings">Settings</DropdownItem>
+                    <DropdownItem key="settings">
+                      <div className="space-y-1 px-2 pb-3 pt-2">
+                        <a
+                          href="#"
+                          className=" text-gray-600 hover:bg-gray-700 block rounded-md px-3 py-2 text-base font-medium"
+                          aria-current="page"
+                        >
+                          Dashboard
+                        </a>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                        >
+                          Team
+                        </a>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                        >
+                          Projects
+                        </a>
+
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                        >
+                          Logout
+                        </a>
+                      </div>
+                    </DropdownItem>
                   </DropdownSection>
 
                   <DropdownSection aria-label="Help & Feedback">
@@ -208,41 +247,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="sm:hidden" id="mobile-menu">
-        <div className="space-y-1 px-2 pb-3 pt-2">
-          <a
-            href="#"
-            className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-            aria-current="page"
-          >
-            Dashboard
-          </a>
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-          >
-            Team
-          </a>
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-          >
-            Projects
-          </a>
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-          >
-            Calendar
-          </a>
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-          >
-            Loggout
-          </a>
-        </div>
-      </div>
+      <div className="sm:hidden" id="mobile-menu"></div>
     </nav>
   );
 }

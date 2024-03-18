@@ -1,7 +1,8 @@
+"use server";
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
-export function supabaseServer() {
+export default async function createSupabaseServer() {
   const cookieStore = cookies();
 
   return createServerClient(
@@ -11,6 +12,12 @@ export function supabaseServer() {
       cookies: {
         get(name: string) {
           return cookieStore.get(name)?.value;
+        },
+        set(name: string, value: string, options: CookieOptions) {
+          cookieStore.set({ name, value, ...options });
+        },
+        remove(name: string, options: CookieOptions) {
+          cookieStore.delete({ name, ...options });
         },
       },
     }
