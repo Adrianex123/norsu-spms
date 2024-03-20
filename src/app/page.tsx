@@ -19,9 +19,7 @@ export default function Page() {
               <a
                 href="#"
                 className="mr-4     block cursor-pointer py-1.5 font-sans text-base font-medium leading-relaxed text-inherit antialiased"
-              >
-                Adrian&apos;s Company Logo here
-              </a>
+              ></a>
             </div>
             <div className="flex nav backdrop-blur-3xl rounded-3xl  px-2  items-center gap-4">
               <div className=" hidden mr-4 md: lg:block">
@@ -133,7 +131,7 @@ export default function Page() {
           <Image src={loginLogo} alt="norsu-logo" />
           <Image src={loginIllustration} alt="login-illustration" />
           <h1 className="text-center text-white text-3xl font-bold"></h1>
-          <p className="text-center text-white text-xl">CAPSTONE DIAY NI.</p>
+          <p className="text-center text-white text-xl"></p>
         </div>
       </div>
     </main>

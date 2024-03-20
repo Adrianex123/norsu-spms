@@ -1,16 +1,21 @@
-import { createClient } from "@/utils/supabase/server";
+"use client";
 import Link from "next/link";
 import React from "react";
-
-import Reacts, { useState } from "react";
 import Image from "next/image";
 import lgs from "@/images/login-logo.png";
+import Signout from "@/app/Signout/page";
+import createSupabaseServer from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
+import { signOut } from "@/app/auth-server-action";
+import { Form } from "react-hook-form";
 
 interface SidebarProps {
   sidebarOpen: boolean;
   setSidebarOpen: (arg: boolean) => void;
 }
+
 export default async function Sidebar() {
+  signOut;
   return (
     <nav
       className="   

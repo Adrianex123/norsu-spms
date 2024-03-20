@@ -1,4 +1,5 @@
 "use client";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Image from "next/image";
 import loginLogo from "../../images/login-logo.png";
 import loginIllustration from "../../images/login-illustration.png";
@@ -10,19 +11,16 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useForm, FormProvider, useFormContext } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form } from "react-hook-form";
 import * as z from "zod";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { signInWithEmailAndPassword } from "../auth-server-action";
-import { Link } from "lucide-react";
+import { signInWithEmailAndPassword } from "@/app/auth-server-action";
 import { redirect } from "next/navigation";
+import { cn } from "@nextui-org/react";
 
 const loginSchema = z.object({
   email: z.string().email({ message: "Must be a valid email" }),
@@ -41,28 +39,23 @@ export default function SignIn() {
   async function onSubmit(data: z.infer<typeof loginSchema>) {
     startTransition(async () => {
       const result = await signInWithEmailAndPassword(data);
-      const { error } = JSON.parse(result);
 
+      const { error } = JSON.parse(result);
       if (error?.message) {
         toast({
           variant: "destructive",
+          title: "Error",
+          description: error.message,
+        });
+      } else
+        toast({
           title: "You submitted the following values:",
           description: (
             <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-              <code className="text-white">{error.message}</code>
+              <code className="text-white">Login Successful</code>
             </pre>
           ),
         });
-      } else {
-        toast({
-          title: "You succesfully login yourself!",
-          description: (
-            <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-              <code className="text-white">Succesfully Login</code>
-            </pre>
-          ),
-        });
-      }
       return redirect("/application");
     });
   }
@@ -81,7 +74,7 @@ export default function SignIn() {
               This is a Capstone project of group 20
             </p>
           </div>
-        </div>{" "}
+        </div>
         <div className="w-full h-full flex flex-col justify-center place-items-center">
           <div className="w-[50%] h-auto">
             <h1 className="text-center  text-slate-800 text-3xl font-bold">
@@ -139,6 +132,9 @@ export default function SignIn() {
                 className="text-lg px-10 py-2  rounded-full text-white bg-[#17134E]"
               >
                 Submit
+                <AiOutlineLoading3Quarters
+                  className={cn(" animate-spin", { hidden: !isPending })}
+                />
               </Button>
             </div>
 

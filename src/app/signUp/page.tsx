@@ -48,7 +48,11 @@ export default function SignUp() {
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     const result = await signInWithEmailAndPassword(data);
     const { error } = JSON.parse(result);
-
+    form.reset({
+      email: "",
+      password: "",
+      confirm: "",
+    });
     if (error?.message) {
       toast({
         variant: "destructive",
