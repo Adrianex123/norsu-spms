@@ -1,44 +1,47 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
-import { format, parse } from "date-fns";
+import { Title } from "chart.js";
+import React, { PureComponent } from "react";
+import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from "recharts";
 
-// Sample data for the chart
-const data = {
-  labels: [
-    "2022-01-01",
-    "2022-02-01",
-    "2022-03-01",
-    "2022-04-01",
-    "2022-05-01",
-  ],
-  datasets: [
-    {
-      label: "Sales",
-      data: [12, 19, 3, 5, 2],
-      fill: false,
-      borderColor: "rgb(75, 192, 192)",
-      tension: 0.1,
-    },
-  ],
-};
+const data01 = [
+  { name: "Used", value: 400, fill: "#003f5c" },
+  { name: "Unused", value: 300, fill: "#ff6361" },
+];
 
-// Parse the date labels and format them for sorting
-const formattedLabels = data.labels.map((label) =>
-  format(parse(label, "yyyy-MM-dd", new Date()), "MMM yyyy")
+const data02 = [
+  { name: "Group A", value: 2400 },
+  { name: "Group B", value: 4567 },
+];
+const sumOfData01 = data01.reduce(
+  (accumulator, currentValue) => accumulator + currentValue.value,
+  0
 );
 
-// Create the chart component
-const Chartnapod = () => {
-  return (
-    <div>
-      <Line
-        data={{
-          ...data,
-          labels: formattedLabels,
-        }}
-      />
-    </div>
-  );
-};
-
-export default Chartnapod;
+export default class Example extends PureComponent {
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart width={400} height={400}>
+          <Pie
+            dataKey="value"
+            isAnimationActive={true}
+            data={data01}
+            cx="50%"
+            cy="50%"
+            outerRadius={80}
+            label
+          />
+          <Pie
+            dataKey="value"
+            data={data02}
+            cx={500}
+            cy={200}
+            innerRadius={40}
+            outerRadius={80}
+          />
+          <Tooltip />(<div></div>
+          );
+        </PieChart>
+      </ResponsiveContainer>
+    );
+  }
+}

@@ -1,17 +1,25 @@
+"use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import lgs from "@/images/login-logo.png";
+import Signout from "@/app/Signout/page";
+import createSupabaseServer from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
+import { signOut } from "@/app/auth-server-action";
+import { Form } from "react-hook-form";
 
 interface SidebarProps {
   sidebarOpen: boolean;
   setSidebarOpen: (arg: boolean) => void;
 }
-export default function Sidebar() {
+
+export default async function Sidebar() {
+  signOut;
   return (
     <nav
       className="   
-    md:w-[23%]  lg:w-[16%] w:[15%]-hidden  sidebar h-[screen] flex flex-col place-items-center bg-[#31363F] py-8 px-8 gap-2"
+    md:w-[23%]  lg:w-[16%] w:[15%]-hidden  sidebar  h-content min-h-[100vh] flex flex-col place-items-center bg-[#31363F] py-8 px-8 gap-2"
     >
       <Image src={lgs} className="w-full" alt="Picture of Logo" />
 
@@ -148,26 +156,7 @@ export default function Sidebar() {
             </svg>
             ACCOUNTS
           </Link>
-          <Link
-            href="/application/ris"
-            className="box py-2 text-white  text-base font-extrabold  rounded-lg  flex items-center gap-2.5  duration-300 ease-in-out"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5"
-              />
-            </svg>
-            REQUEST & ISSUE SLIP
-          </Link>
+
           <Link
             href="/application/activity_logs"
             className="box py-2 text-white  text-base font-extrabold  rounded-lg  flex items-center gap-2.5  duration-300 ease-in-out"
